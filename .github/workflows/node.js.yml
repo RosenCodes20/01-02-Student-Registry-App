@@ -49,7 +49,7 @@ jobs:
         run: npm audit
 
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     needs: [build-test, secret-test]  # Optional: only deploy after tests pass
     steps:
       - name: Deploy to production
