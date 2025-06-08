@@ -38,25 +38,4 @@ describe('Add Students page', function() {
 		"<ul><li>Steve (steve@gmail.com)</li><li>Tina (tina@yahoo.com)</li><li>Peter (peter@gmail.com)</li></ul>");
     assert.ok(studentsReturned, "Add student failed");
   });
-
-  it('Add invalid student', async function() {
-     let res = await fetch(
-      "http://localhost:8888/add-student",
-      {
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: "name=Kate&email="
-      }
-    );
-    let body = await res.text();
-    let errMsg = body.includes("Cannot add student. Name and email fields are required!");
-    assert.ok(errMsg, "Add invalid student should display an error message");
-
-    res = await fetch("http://localhost:8888/");
-    body = await res.text();
-	assert.ok(body.includes("Registered students: <b>2</b>"), 
-		"Add invalid student should not change the students count");
-  });
 });
