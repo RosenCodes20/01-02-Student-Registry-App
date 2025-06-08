@@ -28,7 +28,7 @@ jobs:
       run: npm test
 
   secret-test:
-    needs: unit_tests
+    needs: secret-test
     runs-on: self-hosted
 
     steps:
