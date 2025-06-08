@@ -24,4 +24,4 @@ jobs:
     - name: 'Install Dependencies'
       run: npm install
     - name: 'Run tests'
-      run: node node_modules/mocha/bin/_mocha tests/*.js
+      run: npm node_modules/mocha/bin/_mocha tests/*.js
