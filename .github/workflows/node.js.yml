@@ -28,11 +28,9 @@ jobs:
       run: npm test
 
   secret-test:
-  
-    runs-on: ubuntu-latest
-
-    build:
+    deploy:
       runs-on: ubuntu-latest
+      needs: secret-test
       steps:
         - name: Deploy to production
           uses: johnbeynon/render-deploy-action@v0.0.8
