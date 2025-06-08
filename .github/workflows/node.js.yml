@@ -28,7 +28,6 @@ jobs:
       run: npm test
 
   secret-test:
-    needs: secret-test
     runs-on: self-hosted
 
     steps:
