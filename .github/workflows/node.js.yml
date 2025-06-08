@@ -28,12 +28,13 @@ jobs:
       run: npm test
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to production
-        uses: johnbeynon/render-deploy-action@v0.0.8
-        with:
-          service-id: ${{ secrets.RENDER_TOKEN }}
-          api-key: ${{ secrets.SERVICE_ID }}
-          wait-for-success: true
+  secret-test:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deploy to production
+          uses: johnbeynon/render-deploy-action@v0.0.8
+          with:
+            service-id: ${{ secrets.RENDER_TOKEN }}
+            api-key: ${{ secrets.SERVICE_ID }}
+            wait-for-success: true
