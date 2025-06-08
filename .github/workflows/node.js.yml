@@ -29,6 +29,9 @@ jobs:
 
 jobs:
   secret-test:
+  
+    runs-on: ubuntu-latest
+
     build:
       runs-on: ubuntu-latest
       steps:
