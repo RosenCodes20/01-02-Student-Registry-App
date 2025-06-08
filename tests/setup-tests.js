@@ -1,6 +1,6 @@
 let server;
 
-setup(function() {
+before(function() {
   let students = [
     {"name" : "Steve", "email" : "steve@gmail.com"},
     {"name" : "Tina", "email" : "tina@yahoo.com"}
@@ -17,6 +17,6 @@ setup(function() {
   server.listen(8888);
 });
 
-teardown(function() {
+after(function() {
   server.close();
 });

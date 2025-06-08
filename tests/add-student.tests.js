@@ -1,14 +1,14 @@
 const assert = require('assert');
 const fetch = require('node-fetch');
 
-suite('Add Students page', function() {
-  test('Page title', async function() {
+describe('Add Students page', function() {
+  it('Page title', async function() {
     let res = await fetch("http://localhost:8888/add-student");
     let body = await res.text();
     assert.ok(body.includes("<h1>Register New Student</h1>"));
   });
 
-  test('Students HTML form', async function() {
+  it('Students HTML form', async function() {
     let res = await fetch("http://localhost:8888/add-student");
     let body = await res.text();
     
@@ -22,7 +22,7 @@ suite('Add Students page', function() {
     assert.ok(buttonAddFound, "Button [Add] is missing");
   });
 
-  test('Add valid student', async function() {
+  it('Add valid student', async function() {
     let res = await fetch(
       "http://localhost:8888/add-student",
       {
@@ -39,7 +39,7 @@ suite('Add Students page', function() {
     assert.ok(studentsReturned, "Add student failed");
   });
 
-  test('Add invalid student', async function() {
+  it('Add invalid student', async function() {
      let res = await fetch(
       "http://localhost:8888/add-student",
       {
