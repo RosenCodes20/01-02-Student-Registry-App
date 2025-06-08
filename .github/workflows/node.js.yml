@@ -32,7 +32,7 @@ jobs:
 
   secret-test:
     runs-on: self-hosted
-
+    needs: build-test
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
